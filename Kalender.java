@@ -2,6 +2,7 @@ import java.sql.Time;
 import java.util.Date;
 import java.io.Serializable;
 import java.util.LinkedList;
+@SuppressWarnings("serial")
 public class Kalender  implements Serializable {
 
 
@@ -19,7 +20,7 @@ public void addTerminA(Termin t)//alternativ auch mit den einzelnen PArametern, 
     for(int i = 0; i <= size; i++) //geht die Liste einmal durch
     {
         Termin iterativerTermin = Liste.get(i);
-        if(iterativerTermin.istVor(t.gibDatum(), t.gibAnfang()) >= 0)
+        if(iterativerTermin.istVor(t.gibDatumStart(), t.gibAnfang()) >= 0)
         {
             
                 Liste.add(i, t); //fügt vor dem nächsten Termin ein, alle weiteren Termine rücken nach hinten
@@ -30,9 +31,9 @@ public void addTerminA(Termin t)//alternativ auch mit den einzelnen PArametern, 
     
     Liste.addLast(t);//wenn der Termin vor keinem anderen ist wird er ganz hinten eingetragen
 }
-public void addTerminB(Date d, String anlass,Time start,Time end, String ort)//alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
+public void addTerminB(Date dS, Date dE, String anlass,Time start,Time end, String ort)//alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
 {
-    Termin t = new Termin( d,  anlass, start, end,  ort);
+    Termin t = new Termin( dS,  dE, anlass, start, end,  ort);
     int size = Liste.size(); //laenge der Liste
 
     boolean isAdded = false;
@@ -43,7 +44,7 @@ public void addTerminB(Date d, String anlass,Time start,Time end, String ort)//a
     while (!isAdded && i < size )
     {
         Termin iterativerTermin = Liste.get(i);
-        if(iterativerTermin.istVor(t.gibDatum(), t.gibAnfang()) >= 0)
+        if(iterativerTermin.istVor(t.gibDatumStart(), t.gibAnfang()) >= 0)
         {
             Liste.add(i, t); //fügt vor dem nächsten Termin ein, alle weiteren Termine rücken nach hinten
             isAdded = true;  
@@ -91,9 +92,9 @@ public boolean removeTerminA(Termin t) //alternativ auch mit den einzelnen Param
     //entfernt termin
 }
 
-public boolean removeTerminB(Date d, String anlass,Time start,Time end, String ort) //alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
+public boolean removeTerminB(Date dS, Date dE, String anlass,Time start,Time end, String ort) //alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
 {
-    Termin t = new Termin( d,  anlass, start, end,  ort);
+    Termin t = new Termin( dS,  dE, anlass, start, end,  ort);
     return Liste.remove(t);
     //entfernt termin
 }    
