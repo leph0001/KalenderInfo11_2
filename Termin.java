@@ -1,6 +1,6 @@
 
 
-import java.sql.Time;
+//import java.sql.Time;
 import java.util.Date;
 
 public class Termin 
@@ -8,18 +8,20 @@ public class Termin
     Date dateStart;
     Date dateEnd;
     String anlassA;
-    Time startT;
-    Time endT;
+   // Time startT;
+   // Time endT;
     String ortO;
     boolean ganztaegig;
     
     
-    public Termin(Date dstart, Date dend, String anlass, Time start, Time end, String ort) {
+    public Termin(Date dstart, Date dend, String anlass, 
+    												//	Time start, Time end, 
+    													String ort) {
         dateStart = dstart; //evtl. auch date = new Date(int year, int month, int date);
         dateEnd = dend;
         anlassA = new String(anlass);
-        startT = start; //evtl. auch starT = new Time(int hour, int minute, int second);
-        endT = end; //evtl. auch endT = new Time(int hour, int minute, int second);
+       // startT = start; //evtl. auch starT = new Time(int hour, int minute, int second);
+       // endT = end; //evtl. auch endT = new Time(int hour, int minute, int second);
         ortO = new String(ort);
         if(dstart.equals(dend))
         {
@@ -27,29 +29,24 @@ public class Termin
         }
     }
 
-    public void gibdatum()
-    {
-        startT = new Time(0);
-        
-    }
     
     public boolean istganztaegig()
     {
     	return ganztaegig;
     }
     
-    public Time gibAnfang()
-    {
-        return startT;    
-    }
-    public Time gibEnde()
-    {
-        return endT;
-    }
-    public Date gibDatumStart()
-    {
-        return dateStart;
-    }
+//    public Time gibAnfang()
+//    {
+//        return startT;    
+//    }
+//    public Time gibEnde()
+//    {
+//        return endT;
+//    }
+//    public Date gibDatumStart()
+//    {
+//        return dateStart;
+//    }
     
     public Date gibDatumEnd()
     {
@@ -91,31 +88,33 @@ public class Termin
     {
         anlassA = new String(a); 
     }
-    @SuppressWarnings("deprecation")
-    public void setzteAnfang(int hour, int minute)
-    {
-        endT.setHours(hour);
-        endT.setMinutes(minute);
-    }
-    @SuppressWarnings("deprecation")
-    public void setzteEnde(int hour, int minute)
-    {
-        startT.setHours(hour);
-        startT.setMinutes(minute);
-    }
+//    @SuppressWarnings("deprecation")
+//    public void setzteAnfang(int hour, int minute)
+//    {
+//        endT.setHours(hour);
+//        endT.setMinutes(minute);
+//    }
+//    @SuppressWarnings("deprecation")
+//    public void setzteEnde(int hour, int minute)
+//    {
+//        startT.setHours(hour);
+//        startT.setMinutes(minute);
+//    }
     public void setzeOrt(String o)
     {
         ortO = new String(o);
     }
-    public  int istVor(Date d, Time anfang)
+    public  int istVor(Date d
+    		//,Time anfang
+    							)
     {
         if(dateStart.compareTo(d) == 0) {
-            if(startT.compareTo(anfang) == 0)
+            //if(startT.compareTo(anfang) == 0)
                 return 0;
-            if(startT.compareTo(anfang) < 0)
-                return -1;
-            else
-                return 1;
+//            if(startT.compareTo(anfang) < 0)
+//                return -1;
+//            else
+//                return 1;
         }
         else 
         {
