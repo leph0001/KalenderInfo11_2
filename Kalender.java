@@ -20,7 +20,9 @@ public void addTerminA(Termin t)//alternativ auch mit den einzelnen PArametern, 
     for(int i = 0; i <= size; i++) //geht die Liste einmal durch
     {
         Termin iterativerTermin = Liste.get(i);
-        if(iterativerTermin.istVor(t.gibDatumStart(), t.gibAnfang()) >= 0)
+        if(iterativerTermin.istVor(t.gibDatumStart()
+        		//, t.gibAnfang()
+        		) >= 0)
         {
             
                 Liste.add(i, t); //fügt vor dem nächsten Termin ein, alle weiteren Termine rücken nach hinten
@@ -33,7 +35,9 @@ public void addTerminA(Termin t)//alternativ auch mit den einzelnen PArametern, 
 }
 public void addTerminB(Date dS, Date dE, String anlass,Time start,Time end, String ort)//alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
 {
-    Termin t = new Termin( dS,  dE, anlass, start, end,  ort);
+    Termin t = new Termin( dS,  dE, anlass, 
+    										//start,end,
+    													ort);
     int size = Liste.size(); //laenge der Liste
 
     boolean isAdded = false;
@@ -44,7 +48,9 @@ public void addTerminB(Date dS, Date dE, String anlass,Time start,Time end, Stri
     while (!isAdded && i < size )
     {
         Termin iterativerTermin = Liste.get(i);
-        if(iterativerTermin.istVor(t.gibDatumStart(), t.gibAnfang()) >= 0)
+        if(iterativerTermin.istVor(t.gibDatumStart() 
+        												//,t.gibAnfang()  
+        																	)>= 0)
         {
             Liste.add(i, t); //fügt vor dem nächsten Termin ein, alle weiteren Termine rücken nach hinten
             isAdded = true;  
@@ -94,7 +100,9 @@ public boolean removeTerminA(Termin t) //alternativ auch mit den einzelnen Param
 
 public boolean removeTerminB(Date dS, Date dE, String anlass,Time start,Time end, String ort) //alternativ auch mit den einzelnen PArametern, wie Datum, Anlass, Ort, etc.
 {
-    Termin t = new Termin( dS,  dE, anlass, start, end,  ort);
+    Termin t = new Termin( dS,  dE, anlass, 
+    										//start, end,  
+    													ort);
     return Liste.remove(t);
     //entfernt termin
 }    
@@ -105,20 +113,24 @@ public int wieVieleTermine()
     //gibt die Anzahl der Termine aus
 }    
     
-@SuppressWarnings({ "deprecation"})
+//@SuppressWarnings({ "deprecation"})
 
 public LinkedList<Termin> gibTermine(Date d)
 {
     LinkedList<Termin> terminDesTages = new LinkedList<Termin>();
-    Time beginn = new Time(0, 0 , 0);
-    Time schluss = new Time(23, 59 , 59);
+//    Time beginn = new Time(0, 0 , 0);
+//    Time schluss = new Time(23, 59 , 59);
     int size = Liste.size();
     int erster = -1;
     int letzter = -1;
     for(int i = 0; i < size; i++) 
     {
         System.out.println("for(i):" + i);
-        if(Liste.get(i).istVor(d, beginn) >= 0 && Liste.get(i).istVor(d, schluss) <= 0)
+        if(Liste.get(i).istVor(d 
+        						//,beginn
+        								) >= 0 && Liste.get(i).istVor(d 
+        																//,schluss
+        																		) <= 0)
         {
             erster = i;
             i =size +1;
@@ -130,7 +142,11 @@ public LinkedList<Termin> gibTermine(Date d)
     {
         System.out.println("for(j):" + j);
         //if(Liste.get(j).istVor(d, schluss) <= 0 )
-        if(Liste.get(j).istVor(d, beginn) >= 0 && Liste.get(j).istVor(d, schluss) <= 0)
+        if(Liste.get(j).istVor(d
+        						//, beginn
+        									) >= 0 && Liste.get(j).istVor(d
+        																	//, schluss
+        																				) <= 0)
         {
             letzter = j;
             
