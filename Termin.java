@@ -1,28 +1,41 @@
+
+
 import java.sql.Time;
 import java.util.Date;
 
 public class Termin 
 {
-    Date date;
+    Date dateStart;
+    Date dateEnd;
     String anlassA;
     Time startT;
     Time endT;
     String ortO;
+    boolean ganztaegig;
     
     
-    
-    public Termin(Date d, String anlass, Time start, Time end, String ort) {
-        date = d; //evtl. auch date = new Date(int year, int month, int date);
+    public Termin(Date dstart, Date dend, String anlass, Time start, Time end, String ort) {
+        dateStart = dstart; //evtl. auch date = new Date(int year, int month, int date);
+        dateEnd = dend;
         anlassA = new String(anlass);
         startT = start; //evtl. auch starT = new Time(int hour, int minute, int second);
         endT = end; //evtl. auch endT = new Time(int hour, int minute, int second);
         ortO = new String(ort);
+        if(dstart.equals(dend))
+        {
+        	ganztaegig = false;
+        }
     }
 
     public void gibdatum()
     {
         startT = new Time(0);
         
+    }
+    
+    public boolean istganztaegig()
+    {
+    	return ganztaegig;
     }
     
     public Time gibAnfang()
@@ -33,10 +46,16 @@ public class Termin
     {
         return endT;
     }
-    public Date gibDatum()
+    public Date gibDatumStart()
     {
-        return date;
+        return dateStart;
     }
+    
+    public Date gibDatumEnd()
+    {
+        return dateEnd;
+    }
+    
     public String gibOrt()
     {
         return ortO;
@@ -46,11 +65,28 @@ public class Termin
         return anlassA;
     }
     @SuppressWarnings("deprecation")
-    public void setzteDatum(int day, int month)
+    public void setzeDatumEnd(int day, int month)
     {
-        date.setDate(day);
-        date.setMonth(month);
+        dateEnd.setDate(day);
+        dateEnd.setMonth(month);
     }
+    
+    @SuppressWarnings("deprecation")
+    public void setzeDatumStart(int day, int month)
+    {
+        dateStart.setDate(day);
+        dateStart.setMonth(month);
+    }
+    
+    @SuppressWarnings("deprecation")
+	public void setzeDatum(int dayS, int monthS, int dayE, int monthE)
+    {
+    	dateStart.setDate(dayS);
+        dateStart.setMonth(monthS);
+        dateEnd.setDate(dayE);
+        dateEnd.setMonth(monthE);
+    }
+    
     public void setzteAnlass(String a)
     {
         anlassA = new String(a); 
@@ -73,7 +109,7 @@ public class Termin
     }
     public  int istVor(Date d, Time anfang)
     {
-        if(date.compareTo(d) == 0) {
+        if(dateStart.compareTo(d) == 0) {
             if(startT.compareTo(anfang) == 0)
                 return 0;
             if(startT.compareTo(anfang) < 0)
@@ -83,7 +119,7 @@ public class Termin
         }
         else 
         {
-        if(date.compareTo(d) < 0)
+        if(dateStart.compareTo(d) < 0)
             return -1;
         else
             return 1;
@@ -121,11 +157,12 @@ public class Termin
     @SuppressWarnings("deprecation")
     public int wochenTagBerechnen()   
     {
-        int t = date.getDay();
-        int m = date.getMonth();;
-        int j = date.getYear();
+        int t = dateStart.getDay();
+        int m = dateStart.getMonth();;
+        int j = dateStart.getYear();
 
         System.out.println("t" + t + "m" + m + "j" + j);
         return wochenTagBerechnen(t, m, j);
     }
 }
+
