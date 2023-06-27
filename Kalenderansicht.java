@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingConstants; 
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -69,107 +70,129 @@ public class Kalenderansicht implements ActionListener{
         JLabel Montag = new JLabel();
         Montag.setText("Montag");
         Montag.setVisible(true);
-        Montag.setHorizontalTextPosition(JLabel.CENTER);
-        Montag.setForeground(Color.GREEN);
-        Montag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Montag.setHorizontalAlignment(SwingConstants.CENTER);
+        Montag.setForeground(Color.black);
+        Montag.setFont(new Font("Verdana", Font.PLAIN,20));
         Montag.setOpaque(true);
-        Montag.setBounds(300, 200, 200, 40);
+        Montag.setBounds(150, 200, 150, 40);
+        Montag.setVerticalAlignment(JLabel.CENTER); 
+        Montag.setBackground(Color.GRAY);
+        
 
         //Dienstag Überschrift
         JLabel Dienstag = new JLabel();
         Dienstag.setText("Dienstag");
         Dienstag.setVisible(true);
-        Dienstag.setHorizontalTextPosition(JLabel.CENTER);
-        Dienstag.setForeground(Color.GREEN);
-        Dienstag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Dienstag.setHorizontalAlignment(SwingConstants.CENTER);
+        Dienstag.setForeground(Color.black);
+        Dienstag.setFont(new Font("Verdana", Font.PLAIN,20));
         Dienstag.setOpaque(true);
-        Dienstag.setBounds(500, 200, 200, 40);
+        Dienstag.setBounds(300, 200, 150, 40);
+        Dienstag.setVerticalAlignment(JLabel.CENTER); 
+        Dienstag.setBackground(Color.GRAY);
 
         //Mittwoch Überschrift
         JLabel Mittwoch = new JLabel();
         Mittwoch.setText("Mittwoch");
         Mittwoch.setVisible(true);
-        Mittwoch.setHorizontalTextPosition(JLabel.CENTER);
-        Mittwoch.setForeground(Color.GREEN);
-        Mittwoch.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Mittwoch.setHorizontalAlignment(SwingConstants.CENTER);
+        Mittwoch.setForeground(Color.black);
+        Mittwoch.setFont(new Font("Verdana", Font.PLAIN,20));
         Mittwoch.setOpaque(true);
-        Mittwoch.setBounds(700, 200, 200, 40);
+        Mittwoch.setBounds(450, 200, 150, 40);
+        Mittwoch.setVerticalAlignment(JLabel.CENTER);
+        Mittwoch.setBackground(Color.GRAY);
 
         //Donnerstag Überschrift
         JLabel Donnerstag = new JLabel();
         Donnerstag.setText("Donnerstag");
         Donnerstag.setVisible(true);
-        Donnerstag.setHorizontalTextPosition(JLabel.CENTER);
-        Donnerstag.setForeground(Color.GREEN);
-        Donnerstag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Donnerstag.setHorizontalAlignment(SwingConstants.CENTER);
+        Donnerstag.setForeground(Color.black);
+        Donnerstag.setFont(new Font("Verdana", Font.PLAIN,20));
         Donnerstag.setOpaque(true);
-        Donnerstag.setBounds(900, 200, 200, 40);
+        Donnerstag.setBounds(600, 200, 150, 40);
+        Donnerstag.setVerticalAlignment(JLabel.CENTER); 
+        Donnerstag.setBackground(Color.GRAY);
 
         //Freitag Überschrift
         JLabel Freitag = new JLabel();
         Freitag.setText("Freitag");
         Freitag.setVisible(true);
-        Freitag.setHorizontalTextPosition(JLabel.CENTER);
-        Freitag.setForeground(Color.GREEN);
-        Freitag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Freitag.setHorizontalAlignment(SwingConstants.CENTER);
+        Freitag.setForeground(Color.black);
+        Freitag.setFont(new Font("Verdana", Font.PLAIN,20));
         Freitag.setOpaque(true);
-        Freitag.setBounds(1100, 200, 200, 40);
+        Freitag.setBounds(750, 200, 150, 40);
+        Freitag.setVerticalAlignment(JLabel.CENTER); 
+        Freitag.setBackground(Color.GRAY);
 
         //Samstag Überschrift
         JLabel Samstag = new JLabel();
         Samstag.setText("Samstag");
         Samstag.setVisible(true);
-        Samstag.setHorizontalTextPosition(JLabel.CENTER);
-        Samstag.setForeground(Color.GREEN);
-        Samstag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Samstag.setHorizontalAlignment(SwingConstants.CENTER);
+        Samstag.setForeground(Color.black);
+        Samstag.setFont(new Font("Verdana", Font.PLAIN,20));
         Samstag.setOpaque(true);
-        Samstag.setBounds(1300, 200, 200, 40);
+        Samstag.setBounds(900, 200, 150, 40);
+        Samstag.setVerticalAlignment(JLabel.CENTER); 
+        Samstag.setBackground(Color.GRAY);
 
         //Sonntag Überschrift
         JLabel Sonntag = new JLabel();
         Sonntag.setText("Sonntag");
         Sonntag.setVisible(true);
-        Sonntag.setHorizontalTextPosition(JLabel.CENTER);
-        Sonntag.setForeground(Color.GREEN);
-        Sonntag.setFont(new Font("MV Boli", Font.PLAIN,25));
+        Sonntag.setHorizontalAlignment(SwingConstants.CENTER);
+        Sonntag.setForeground(Color.black);
+        Sonntag.setFont(new Font("Verdana", Font.PLAIN,20));
         Sonntag.setOpaque(true);
-        Sonntag.setBounds(1500, 200, 200, 40);
+        Sonntag.setBounds(1050, 200, 150, 40);
+        Sonntag.setVerticalAlignment(JLabel.CENTER); 
+        Sonntag.setBackground(Color.GRAY);
         
         //GUI Zellen erstellen (Zelle = der Spalte, in der die Termine stehen für den Tag)
         //Montag Zelle
         montagZelle = new JLabel();
-        montagZelle.setBounds(300, 240, 200, 700);
+        montagZelle.setBounds(150, 240, 150, 455);
         montagZelle.setVerticalAlignment(JLabel.TOP);
-
+        montagZelle.setOpaque(true);
+       
         //Dienstag Zelle
         dienstagZelle = new JLabel();
-        dienstagZelle.setBounds(500, 240, 200, 700);
+        dienstagZelle.setBounds(300, 240, 150, 455);
         dienstagZelle.setVerticalAlignment(JLabel.TOP);
+        dienstagZelle.setOpaque(true);
         
         //Mittwoch Zelle
         mittwochZelle = new JLabel();
-        mittwochZelle.setBounds(700, 240, 200, 700);
+        mittwochZelle.setBounds(450, 240, 150, 455);
         mittwochZelle.setVerticalAlignment(JLabel.TOP);
+        mittwochZelle.setOpaque(true);
 
         //Donnerstag Zelle
         donnerstagZelle = new JLabel();
-        donnerstagZelle.setBounds(900, 240, 200, 700);
+        donnerstagZelle.setBounds(600, 240, 150, 455);
         donnerstagZelle.setVerticalAlignment(JLabel.TOP);
+        donnerstagZelle.setOpaque(true);
         
         //Freitag Zelle
         freitagZelle = new JLabel();
-        freitagZelle.setBounds(1100, 240, 200, 700);
+        freitagZelle.setBounds(750, 240, 150, 455);
         freitagZelle.setVerticalAlignment(JLabel.TOP);
+        freitagZelle.setOpaque(true);
 
         //Samstag Zelle
         samstagZelle = new JLabel();
-        samstagZelle.setBounds(1300, 240, 200, 700);
+        samstagZelle.setBounds(900, 240, 150, 455);
         samstagZelle.setVerticalAlignment(JLabel.TOP);
+        samstagZelle.setOpaque(true);
 
         //Sonntag Zelle
         sonntagZelle = new JLabel();
-        sonntagZelle.setBounds(2500, 240, 200, 700);
+        sonntagZelle.setBounds(1050, 240, 150, 455);
         sonntagZelle.setVerticalAlignment(JLabel.TOP);
+        sonntagZelle.setOpaque(true);
 
 
 
@@ -178,36 +201,43 @@ public class Kalenderansicht implements ActionListener{
         KWAnzeige = new JLabel();
         KWAnzeige.setText("KW: " + kw);
         KWAnzeige.setVisible(true);
-        KWAnzeige.setHorizontalTextPosition(JLabel.CENTER);
-        KWAnzeige.setForeground(Color.RED);
-        KWAnzeige.setFont(new Font("MV Boli", Font.PLAIN,25));
-        KWAnzeige.setOpaque(true);
-        KWAnzeige.setBounds(700, 100, 100, 50);
+        KWAnzeige.setHorizontalAlignment(JLabel.CENTER);
+        KWAnzeige.setForeground(Color.BLACK);
+        KWAnzeige.setFont(new Font("Verdana", Font.PLAIN,25));
+        KWAnzeige.setOpaque(false);
+        KWAnzeige.setBounds(1050, 100, 100, 50);
+        KWAnzeige.setVerticalAlignment(JLabel.CENTER); 
+        
         
         // KWminusButton erstellen 
         KWminus = new JButton();
-        KWminus.setBounds(650, 100, 50, 50);
+        KWminus.setBounds(1000, 100, 50, 50);
         KWminus.setVisible(true);
         KWminus.addActionListener(this);
         KWminus.setText("<");
         KWminus.setFocusable(false);
+        KWminus.setOpaque(true);
+        KWminus.setBackground(Color.GRAY);
 
         // KWplusButton erstellen 
         KWplus = new JButton();
-        KWplus.setBounds(800, 100, 50, 50);
+        KWplus.setBounds(1150, 100, 50, 50);
         KWplus.setVisible(true);
         KWplus.addActionListener(this);
         KWplus.setText(">");
         KWplus.setFocusable(false);
+        KWplus.setBackground(Color.GRAY);
 
 
         // terminHinzufügen erstellen
         terminHinzufuegen = new JButton();
-        terminHinzufuegen.setBounds(300, 100, 300, 50);
+        terminHinzufuegen.setBounds(150, 100, 300, 50);
         terminHinzufuegen.setVisible(true);
         terminHinzufuegen.addActionListener(this);
         terminHinzufuegen.setText("Termin hinzufügen");
         terminHinzufuegen.setFocusable(false);
+        terminHinzufuegen.setBackground(Color.GRAY);
+        terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN,25));
 
 
         // Kalenderansicht (JFrame) initialisieren
