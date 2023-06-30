@@ -405,7 +405,7 @@ public class Kalenderansicht implements ActionListener{
     public void terminHinzufuegen() { //öffnet das GUI um einen Termin hinzuzufügen
         // erstellt den JFrame
         terminHinzufuegenAnsicht = new JFrame();
-        terminHinzufuegenAnsicht.setSize(854, 480);
+        terminHinzufuegenAnsicht.setSize(1100, 600); //verändert davor (854,480)
         terminHinzufuegenAnsicht.setVisible(true);
         terminHinzufuegenAnsicht.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         terminHinzufuegenAnsicht.setResizable(false);
@@ -423,42 +423,42 @@ public class Kalenderansicht implements ActionListener{
         anlass.setBounds(27, 25, 800, 50);
         anlass.setBorder(BorderFactory.createLineBorder(Color.black));
 
-        startH = new JFormattedTextField(format);
-        startH.setBounds(27, 100, 181, 50);
-        startH.setText("Startstunde");
-        startH.setBorder(BorderFactory.createLineBorder(Color.black));
-        startH.setVisible(true);
-
-        startM = new JFormattedTextField(format);
-        startM.setBounds(219, 100, 181, 50);
-        startM.setText("Startminute");
-        startM.setBorder(BorderFactory.createLineBorder(Color.black));
-        startM.setVisible(true);
-
-        endH = new JFormattedTextField(format);
-        endH.setBounds(427, 100, 181, 50);
-        endH.setText("Endzeit");
-        endH.setBorder(BorderFactory.createLineBorder(Color.black));
-
-        endM = new JFormattedTextField(format);
-        endM.setBounds(619, 100, 181, 50);
-        endM.setText("Endzeit");
-        endH.setBorder(BorderFactory.createLineBorder(Color.black));
-
-        dateY = new JFormattedTextField(format);
-        dateY.setBounds(27, 175, 260, 50);
-        dateY.setText("Jahr");
-        dateY.setBorder(BorderFactory.createLineBorder(Color.black));
-
-        dateM = new JFormattedTextField(format);
-        dateM.setBounds(297, 175, 260, 50);
-        dateM.setText("Monat");
-        dateM.setBorder(BorderFactory.createLineBorder(Color.black));
-
-        dateD = new JFormattedTextField(format);
-        dateD.setBounds(567, 175, 260, 50);
-        dateD.setText("Tag");
-        dateD.setBorder(BorderFactory.createLineBorder(Color.black));
+//        startH = new JFormattedTextField(format);
+//        startH.setBounds(27, 100, 181, 50);
+//        startH.setText("Startstunde");
+//        startH.setBorder(BorderFactory.createLineBorder(Color.black));
+//        startH.setVisible(true);
+//
+//        startM = new JFormattedTextField(format);
+//        startM.setBounds(219, 100, 181, 50);
+//        startM.setText("Startminute");
+//        startM.setBorder(BorderFactory.createLineBorder(Color.black));
+//        startM.setVisible(true);
+//
+//        endH = new JFormattedTextField(format);
+//        endH.setBounds(427, 100, 181, 50);
+//        endH.setText("Endzeit");
+//        endH.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//        endM = new JFormattedTextField(format);
+//        endM.setBounds(619, 100, 181, 50);
+//        endM.setText("Endzeit");
+//        endH.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//        dateY = new JFormattedTextField(format);
+//        dateY.setBounds(27, 175, 260, 50);
+//        dateY.setText("Jahr");
+//        dateY.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//        dateM = new JFormattedTextField(format);
+//        dateM.setBounds(297, 175, 260, 50);
+//        dateM.setText("Monat");
+//        dateM.setBorder(BorderFactory.createLineBorder(Color.black));
+//
+//        dateD = new JFormattedTextField(format);
+//        dateD.setBounds(567, 175, 260, 50);
+//        dateD.setText("Tag");
+//        dateD.setBorder(BorderFactory.createLineBorder(Color.black));
 
         ort = new JTextField("Ort");
         ort.setBounds(27, 250, 800, 50);
@@ -469,7 +469,8 @@ public class Kalenderansicht implements ActionListener{
         oKButton.setBounds(427, 350, 373, 50);
         oKButton.addActionListener(this);
 
-        abbrechenButton = new JButton("Abbrechen"); //macht noch nichts
+
+        abbrechenButton = new JButton("Abbrechen"); //macht noch nichts   überarbeitet
         abbrechenButton.setBounds(27, 350, 373, 50);
         abbrechenButton.addActionListener(this);
         
@@ -477,7 +478,7 @@ public class Kalenderansicht implements ActionListener{
     	ds = new SpinnerDateModel (start, null, null, Calendar. HOUR_OF_DAY);
     	spinnerstart = new JSpinner(ds);
     	datestart = new JSpinner.DateEditor(spinnerstart, "HH:mm:ss");
-    	spinnerstart.setBounds(100,200,150,70);
+    	spinnerstart.setBounds(100,150,150,70);
     	//terminHinzufuegenAnsicht.add(spinnerstart);
     	
 //    	Date start = new Date();
@@ -492,7 +493,7 @@ public class Kalenderansicht implements ActionListener{
     	de = new SpinnerDateModel (end, null, null, Calendar. HOUR_OF_DAY);
     	spinnerend = new JSpinner(de);
     	dateend = new JSpinner.DateEditor(spinnerend, "HH:mm:ss");
-    	spinnerend.setBounds(400,200,150,70);
+    	spinnerend.setBounds(400,150,150,70);
     	//terminHinzufuegenAnsicht.add(spinnerend);
     	
 //    	Date end = new Date();
@@ -506,12 +507,12 @@ public class Kalenderansicht implements ActionListener{
     	
         
         Kategorien = new JComboBox(comboBoxliste);
-        Kategorien.setBounds(600,200,100,50);
+        Kategorien.setBounds(600,150,150,70);
         //terminHinzufuegenAnsicht.add(Kategorien);
 
     	
     	KategorieHinzufügen = new JButton("+");
-    	KategorieHinzufügen.setBounds(720,200,50,50);
+    	KategorieHinzufügen.setBounds(750,150,150,70);
     	KategorieHinzufügen.addActionListener(this);
 
     	//terminHinzufuegenAnsicht.add(KategorieHinzufügen);
@@ -523,13 +524,13 @@ public class Kalenderansicht implements ActionListener{
         terminHinzufuegenAnsicht.add(ort, 0);
         terminHinzufuegenAnsicht.add(oKButton, 0);
         terminHinzufuegenAnsicht.add(abbrechenButton, 0);
-        terminHinzufuegenAnsicht.add(startH, 0);
-        terminHinzufuegenAnsicht.add(startM, 0);
-        terminHinzufuegenAnsicht.add(endH, 0);
-        terminHinzufuegenAnsicht.add(endM, 0);
-        terminHinzufuegenAnsicht.add(dateY, 0);
-        terminHinzufuegenAnsicht.add(dateM, 0);
-        terminHinzufuegenAnsicht.add(dateD, 0);
+//        terminHinzufuegenAnsicht.add(startH, 0);
+//        terminHinzufuegenAnsicht.add(startM, 0);
+//        terminHinzufuegenAnsicht.add(endH, 0);
+//        terminHinzufuegenAnsicht.add(endM, 0);
+//        terminHinzufuegenAnsicht.add(dateY, 0);
+//        terminHinzufuegenAnsicht.add(dateM, 0);
+//        terminHinzufuegenAnsicht.add(dateD, 0);
         terminHinzufuegenAnsicht.add(spinnerstart, 0);
         terminHinzufuegenAnsicht.add(spinnerend, 0);
         terminHinzufuegenAnsicht.add(Kategorien, 0);
@@ -723,7 +724,7 @@ public class Kalenderansicht implements ActionListener{
             }
         }
         if (e.getSource() == terminHinzufuegen) { //wenn der terminHinzufuegen Button gedrückt wird
-            terminHinzufuegen();
+        	terminHinzufuegen();
         }
         
         if (e.getSource() == KategorieHinzufügen) {
@@ -732,13 +733,14 @@ public class Kalenderansicht implements ActionListener{
 			neueKategorie.setSize(400, 300);
 			neueKategorie.setTitle("Kategorie hinzufügen");
 			neueKategorie.setLayout(null);
-			neueKategorie.setLocation(900, 500);
+			neueKategorie.setLocation(1000, 200);
 			neueKategorie.setVisible(true);
 			neueKategorie.setResizable(false);
 			
-			NeueKategorie = new JTextField("Neue Kategorie", 15);
+			NeueKategorie = new JFormattedTextField("Neue Kategorie");
 			NeueKategorie.setBounds(10,60,300,50);
 			neueKategorie.add(NeueKategorie);
+			
 			
 			hinzufügen = new JButton("Hinzufügen");
 			hinzufügen.setBounds(10,200,150,50);
@@ -853,15 +855,15 @@ public class Kalenderansicht implements ActionListener{
             Time tAnfang = new Time(sH, sM, 0);
             Time tEnde = new Time(eH, eM, 0);
             */
-            System.out.println(tAnfang.toString());
-            Date tDatum = new Date(dY-1900, dM - 1, dD);
-            System.out.println(tDatum.toString());
-            String tOrt = ort.getText();
-            System.out.println(tOrt);
-
-            kalender.addTerminB(tDatum, tAnlass, tAnfang, tEnde, tOrt);
-            System.out.println("nach addtermin");
-            
+//  TEST          System.out.println(tAnfang.toString());
+//            Date tDatum = new Date(dY-1900, dM - 1, dD);
+//            System.out.println(tDatum.toString());
+//            String tOrt = ort.getText();
+//            System.out.println(tOrt);
+//
+//            kalender.addTerminB(tDatum, tAnlass, tAnfang, tEnde, tOrt);
+//            System.out.println("nach addtermin");
+//            
             startDatumAusgabe = ds.getDate();
 			endDatumAusgabe = de.getDate();
 			
