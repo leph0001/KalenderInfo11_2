@@ -275,6 +275,7 @@ public class Kalenderansicht implements ActionListener{
         terminHinzufuegen.setFocusable(false);
         terminHinzufuegen.setBackground(Color.GRAY);
         terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN,25));
+  
 
 
         // Kalenderansicht (JFrame) initialisieren
@@ -423,6 +424,7 @@ public class Kalenderansicht implements ActionListener{
         anlass.setBounds(27, 25, 800, 50);
         anlass.setBorder(BorderFactory.createLineBorder(Color.black));
 
+
 //        startH = new JFormattedTextField(format);
 //        startH.setBounds(27, 100, 181, 50);
 //        startH.setText("Startstunde");
@@ -468,11 +470,20 @@ public class Kalenderansicht implements ActionListener{
         oKButton = new JButton("OK");
         oKButton.setBounds(427, 350, 373, 50);
         oKButton.addActionListener(this);
+        oKButton.setFocusable(false);
+        oKButton.setBackground(Color.GRAY);
+        oKButton.setFont(new Font("Verdana", Font.PLAIN,25));
+        oKButton.setVisible(true);
+        
 
 
         abbrechenButton = new JButton("Abbrechen"); //macht noch nichts   überarbeitet
         abbrechenButton.setBounds(27, 350, 373, 50);
         abbrechenButton.addActionListener(this);
+        abbrechenButton.setFocusable(false);
+        abbrechenButton.setBackground(Color.GRAY);
+        abbrechenButton.setFont(new Font("Verdana", Font.PLAIN,25));
+        abbrechenButton.setVisible(true);
         
         start = new Date();
     	ds = new SpinnerDateModel (start, null, null, Calendar. HOUR_OF_DAY);
@@ -514,6 +525,11 @@ public class Kalenderansicht implements ActionListener{
     	KategorieHinzufügen = new JButton("+");
     	KategorieHinzufügen.setBounds(750,150,150,70);
     	KategorieHinzufügen.addActionListener(this);
+    	KategorieHinzufügen.setFocusable(false);
+    	KategorieHinzufügen.setBackground(Color.GRAY);
+    	KategorieHinzufügen.setFont(new Font("Verdana", Font.PLAIN,25));
+    	KategorieHinzufügen.setVisible(true);
+    	
 
     	//terminHinzufuegenAnsicht.add(KategorieHinzufügen);
     	 
@@ -744,6 +760,10 @@ public class Kalenderansicht implements ActionListener{
 			
 			hinzufügen = new JButton("Hinzufügen");
 			hinzufügen.setBounds(10,200,150,50);
+			hinzufügen.setFocusable(false);
+			hinzufügen.setBackground(Color.GRAY);
+			hinzufügen.setFont(new Font("Verdana", Font.PLAIN,25));
+			hinzufügen.setVisible(true);
 			neueKategorie.add(hinzufügen);
 			
 			hinzufügen.addActionListener(new ActionListener() {
@@ -769,7 +789,12 @@ public class Kalenderansicht implements ActionListener{
 			
 			JButton abbruchKategorie = new JButton("Abbruch");
 			abbruchKategorie.setBounds(220,200,150,50);
+			abbruchKategorie.setFocusable(false);
+			abbruchKategorie.setBackground(Color.GRAY);
+			abbruchKategorie.setFont(new Font("Verdana", Font.PLAIN,25));
+			abbruchKategorie.setVisible(true);
 			neueKategorie.add(abbruchKategorie);
+			
 			
 			abbruchKategorie.addActionListener(new ActionListener() {
 
