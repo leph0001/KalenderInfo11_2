@@ -87,10 +87,10 @@ public class Kalenderansicht implements ActionListener {
 
 
         hintergrund = new JLabel("");
-		hintergrund.setBounds(0,0,1280,720);
+		hintergrund.setBounds(0,-30,1280,720);
 		iconHintergrund = new ImageIcon("Images/Kalender.png");
 		imgHintergrund = iconHintergrund.getImage();
-		imageScaleHintergrund = imgHintergrund.getScaledInstance(iconHintergrund.getIconWidth()- 340, iconHintergrund.getIconHeight()- 250, Image.SCALE_SMOOTH);
+		imageScaleHintergrund = imgHintergrund.getScaledInstance(iconHintergrund.getIconWidth()- 335, iconHintergrund.getIconHeight()- 200, Image.SCALE_SMOOTH);
 		scaleIconHintergrund = new ImageIcon(imageScaleHintergrund);
 		hintergrund.setIcon(scaleIconHintergrund);
 
