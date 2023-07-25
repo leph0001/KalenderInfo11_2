@@ -340,7 +340,7 @@ public class Kalenderansicht implements ActionListener {
         for (int i = 0; i < termine.size(); i++) {
             Termin t = (Termin) termine.get(i);
             terminzelle = terminzelle + "<html> <BR>" + "<html> <BR>" + t.gibAnlass() + "<html> <BR>"
-                    + t.gibAnfangszeit() + " - " + t.gibEndzeit() + "<html> <BR>" + t.gibOrt();
+                    + t.gibAnfangszeit() + " - " + t.gibEndzeit() + "<html> <BR>" + t.gibOrt() + "<html> <BR>" + t.gibKategorie();
             wochentagZelle(d).setText(terminzelle);
 
         }
