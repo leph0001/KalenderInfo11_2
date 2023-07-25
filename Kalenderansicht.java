@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
@@ -41,6 +42,11 @@ public class Kalenderansicht implements ActionListener {
     private JLabel samstagZelle;
     private JLabel sonntagZelle;
     private JButton terminHinzufuegen;
+    private JLabel hintergrund;
+    private ImageIcon iconHintergrund;
+    private Image imgHintergrund;
+    private Image imageScaleHintergrund;
+    private ImageIcon scaleIconHintergrund;
 
     // GUI Termin hinzufügen
     private JFrame terminHinzufuegenAnsicht;
@@ -79,6 +85,17 @@ public class Kalenderansicht implements ActionListener {
 
     public void KalenderansichtStarten() {
 
+
+        hintergrund = new JLabel("");
+		hintergrund.setBounds(0,-30,1280,720); //1280,720
+		iconHintergrund = new ImageIcon("Images/Kalender.png");
+		imgHintergrund = iconHintergrund.getImage();
+		imageScaleHintergrund = imgHintergrund.getScaledInstance(iconHintergrund.getIconWidth()- 335, iconHintergrund.getIconHeight()- 200, Image.SCALE_SMOOTH);
+		scaleIconHintergrund = new ImageIcon(imageScaleHintergrund);
+		hintergrund.setIcon(scaleIconHintergrund);
+
+		//340 250
+        
         // GUI Tagesüberschriften erstellen
         // Montag Überschrift
         JLabel Montag = new JLabel();
@@ -222,46 +239,56 @@ public class Kalenderansicht implements ActionListener {
 
         // KWminusButton erstellen
         KWminus = new JButton();
-        KWminus.setBounds(1000, 100, 50, 50);
-        KWminus.setVisible(true);
+        KWminus.setBounds(10, 200, 150, 300);
+        //KWminus.setVisible(true);
         KWminus.addActionListener(this);
-        KWminus.setText("<");
+        //KWminus.setText("<");
         KWminus.setFocusable(false);
-        KWminus.setOpaque(true);
-        KWminus.setBackground(Color.GRAY);
+        KWminus.setOpaque(false);
+        KWminus.setContentAreaFilled(false);
+        KWminus.setBorderPainted(false);
+        //KWminus.setBackground(Color.GRAY);
 
         // KWplusButton erstellen
         KWplus = new JButton();
-        KWplus.setBounds(1150, 100, 50, 50);
-        KWplus.setVisible(true);
+        KWplus.setBounds(1100, 200, 150, 300);
+        //KWplus.setVisible(true);
         KWplus.addActionListener(this);
-        KWplus.setText(">");
+        //KWplus.setText(">");
         KWplus.setFocusable(false);
-        KWplus.setBackground(Color.GRAY);
+        KWplus.setFocusable(false);
+        KWplus.setOpaque(false);
+        KWplus.setContentAreaFilled(false);
+        KWplus.setBorderPainted(false);
+        //KWplus.setBackground(Color.GRAY);
 
         // terminHinzufügen erstellen
         terminHinzufuegen = new JButton();
-        terminHinzufuegen.setBounds(150, 100, 300, 50);
-        terminHinzufuegen.setVisible(true);
+        terminHinzufuegen.setBounds(500, 110, 250, 50);
+        //terminHinzufuegen.setVisible(true);
         terminHinzufuegen.addActionListener(this);
-        terminHinzufuegen.setText("Termin hinzufügen");
+        //terminHinzufuegen.setText("Termin hinzufügen");
         terminHinzufuegen.setFocusable(false);
-        terminHinzufuegen.setBackground(Color.GRAY);
-        terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN, 25));
+        //terminHinzufuegen.setBackground(Color.GRAY);
+        terminHinzufuegen.setFocusable(false);
+        terminHinzufuegen.setOpaque(false);
+        terminHinzufuegen.setContentAreaFilled(false);
+        terminHinzufuegen.setBorderPainted(false);
+        //terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN, 25));
 
         // Kalenderansicht (JFrame) initialisieren
         Kalenderansicht = new JFrame();
-        Kalenderansicht.setSize(1920, 1080);
+        Kalenderansicht.setSize(1280, 720);
         Kalenderansicht.setVisible(true);
         Kalenderansicht.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Kalenderansicht.setResizable(false);
         Kalenderansicht.setTitle("Kalenderansicht");
 
-        ImageIcon logo = new ImageIcon("logo.png");
-        Kalenderansicht.setIconImage(logo.getImage());
+        //ImageIcon logo = new ImageIcon("logo.png");
+        //Kalenderansicht.setIconImage(logo.getImage());
         // Kalenderansicht.getContentPane().setBackground(Color.white);
-        Kalenderansicht.getContentPane().setBackground(new Color(255, 255, 255));
-        Kalenderansicht.setLayout(null);
+        //Kalenderansicht.getContentPane().setBackground(new Color(255, 255, 255));
+        //Kalenderansicht.setLayout(null);
 
         // Inhalte Kalenderansicht werden hinzufügen
         Kalenderansicht.add(Montag, 0);
@@ -283,6 +310,8 @@ public class Kalenderansicht implements ActionListener {
         Kalenderansicht.add(KWAnzeige, 0);
         Kalenderansicht.add(KWminus, 0);
         Kalenderansicht.add(KWplus, 0);
+        Kalenderansicht.add(hintergrund, 0);
+
 
         Kalenderansicht.add(terminHinzufuegen);
         Kalenderansicht.validate(); // Kalenderansicht wird refreshed -> nur so sind Termine sichtbar
@@ -303,7 +332,6 @@ public class Kalenderansicht implements ActionListener {
 
     public void terminzelleGeben(Date d) { // Ergänzungsfunktion zu KalenderAnsichtInitialisieren2023(int KW)
         LinkedList<Termin> termine = new LinkedList<Termin>();
-        System.out.println("terminzelleGeben: kalender.wieVieleTermine():" + kalender.wieVieleTermine());
         System.out.println("terminzelleGeben vor gibtTermine" + d.toString());
         termine = kalender.gibTermine(d);
         System.out.println("terminzelleGeben nach" + termine);
@@ -570,8 +598,6 @@ public class Kalenderansicht implements ActionListener {
 
             kalender.addTerminB(ds.getDate(), de.getDate(), anlass.getText(), ort.getText());
             System.out.println("nach addTerminB: " + ds.getDate() + de.getDate() + anlass.getText() + ort.getText());
-
-            System.out.println("kalender.wieVieleTermine():" + kalender.wieVieleTermine());
 
             terminHinzufuegenAnsicht.dispose();
         }
