@@ -340,7 +340,7 @@ public class Kalenderansicht implements ActionListener {
         for (int i = 0; i < termine.size(); i++) {
             Termin t = (Termin) termine.get(i);
             terminzelle = terminzelle + "<html> <BR>" + "<html> <BR>" + t.gibAnlass() + "<html> <BR>"
-                    + t.gibAnfangszeit() + " - " + t.gibEndzeit() + "<html> <BR>" + t.gibOrt() + "<html> <BR>" + t.gibKategorie();
+                    + t.gibAnfangszeit() + " - " + t.gibEndzeit() + "<html> <BR>" + t.gibOrt();
             wochentagZelle(d).setText(terminzelle);
 
         }
@@ -428,16 +428,16 @@ public class Kalenderansicht implements ActionListener {
         oKButton.setBounds(427, 350, 373, 50);
         oKButton.addActionListener(this);
         oKButton.setFocusable(false);
-        oKButton.setBackground(Color.GRAY);
-        oKButton.setFont(new Font("Verdana", Font.PLAIN, 25));
+        //oKButton.setBackground(Color.GRAY);
+        //oKButton.setFont(new Font("Verdana", Font.PLAIN, 25));
         oKButton.setVisible(true);
 
         abbrechenButton = new JButton("Abbrechen"); // macht noch nichts überarbeitet
         abbrechenButton.setBounds(27, 350, 373, 50);
         abbrechenButton.addActionListener(this);
         abbrechenButton.setFocusable(false);
-        abbrechenButton.setBackground(Color.GRAY);
-        abbrechenButton.setFont(new Font("Verdana", Font.PLAIN, 25));
+        //abbrechenButton.setBackground(Color.GRAY);
+        //abbrechenButton.setFont(new Font("Verdana", Font.PLAIN, 25));
         abbrechenButton.setVisible(true);
 
         start = new Date();
@@ -464,8 +464,8 @@ public class Kalenderansicht implements ActionListener {
         KategorieHinzufügen.setBounds(750, 150, 150, 70);
         KategorieHinzufügen.addActionListener(this);
         KategorieHinzufügen.setFocusable(false);
-        KategorieHinzufügen.setBackground(Color.GRAY);
-        KategorieHinzufügen.setFont(new Font("Verdana", Font.PLAIN, 25));
+        //KategorieHinzufügen.setBackground(Color.GRAY);
+        //KategorieHinzufügen.setFont(new Font("Verdana", Font.PLAIN, 25));
         KategorieHinzufügen.setVisible(true);
 
         // terminHinzufuegenAnsicht.add(KategorieHinzufügen);
@@ -538,8 +538,8 @@ public class Kalenderansicht implements ActionListener {
             hinzufügen = new JButton("Hinzufügen");
             hinzufügen.setBounds(10, 200, 150, 50);
             hinzufügen.setFocusable(false);
-            hinzufügen.setBackground(Color.GRAY);
-            hinzufügen.setFont(new Font("Verdana", Font.PLAIN, 25));
+            //hinzufügen.setBackground(Color.GRAY);
+            //hinzufügen.setFont(new Font("Verdana", Font.PLAIN, 25));
             hinzufügen.setVisible(true);
             neueKategorie.add(hinzufügen);
 
@@ -567,8 +567,8 @@ public class Kalenderansicht implements ActionListener {
             JButton abbruchKategorie = new JButton("Abbruch");
             abbruchKategorie.setBounds(220, 200, 150, 50);
             abbruchKategorie.setFocusable(false);
-            abbruchKategorie.setBackground(Color.GRAY);
-            abbruchKategorie.setFont(new Font("Verdana", Font.PLAIN, 25));
+            //abbruchKategorie.setBackground(Color.GRAY);
+            //abbruchKategorie.setFont(new Font("Verdana", Font.PLAIN, 25));
             abbruchKategorie.setVisible(true);
             neueKategorie.add(abbruchKategorie);
 
