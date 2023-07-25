@@ -105,7 +105,7 @@ public class Kalenderansicht implements ActionListener {
         Montag.setForeground(Color.black);
         Montag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Montag.setOpaque(true);
-        Montag.setBounds(150, 200, 150, 40);
+        Montag.setBounds(110, 200, 150, 40);
         Montag.setVerticalAlignment(JLabel.CENTER);
         Montag.setBackground(Color.GRAY);
 
@@ -117,7 +117,7 @@ public class Kalenderansicht implements ActionListener {
         Dienstag.setForeground(Color.black);
         Dienstag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Dienstag.setOpaque(true);
-        Dienstag.setBounds(300, 200, 150, 40);
+        Dienstag.setBounds(260, 200, 150, 40);
         Dienstag.setVerticalAlignment(JLabel.CENTER);
         Dienstag.setBackground(Color.GRAY);
 
@@ -129,7 +129,7 @@ public class Kalenderansicht implements ActionListener {
         Mittwoch.setForeground(Color.black);
         Mittwoch.setFont(new Font("Verdana", Font.PLAIN, 20));
         Mittwoch.setOpaque(true);
-        Mittwoch.setBounds(450, 200, 150, 40);
+        Mittwoch.setBounds(410, 200, 150, 40);
         Mittwoch.setVerticalAlignment(JLabel.CENTER);
         Mittwoch.setBackground(Color.GRAY);
 
@@ -141,7 +141,7 @@ public class Kalenderansicht implements ActionListener {
         Donnerstag.setForeground(Color.black);
         Donnerstag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Donnerstag.setOpaque(true);
-        Donnerstag.setBounds(600, 200, 150, 40);
+        Donnerstag.setBounds(560, 200, 150, 40);
         Donnerstag.setVerticalAlignment(JLabel.CENTER);
         Donnerstag.setBackground(Color.GRAY);
 
@@ -153,7 +153,7 @@ public class Kalenderansicht implements ActionListener {
         Freitag.setForeground(Color.black);
         Freitag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Freitag.setOpaque(true);
-        Freitag.setBounds(750, 200, 150, 40);
+        Freitag.setBounds(710, 200, 150, 40);
         Freitag.setVerticalAlignment(JLabel.CENTER);
         Freitag.setBackground(Color.GRAY);
 
@@ -165,7 +165,7 @@ public class Kalenderansicht implements ActionListener {
         Samstag.setForeground(Color.black);
         Samstag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Samstag.setOpaque(true);
-        Samstag.setBounds(900, 200, 150, 40);
+        Samstag.setBounds(860, 200, 150, 40);
         Samstag.setVerticalAlignment(JLabel.CENTER);
         Samstag.setBackground(Color.GRAY);
 
@@ -177,7 +177,7 @@ public class Kalenderansicht implements ActionListener {
         Sonntag.setForeground(Color.black);
         Sonntag.setFont(new Font("Verdana", Font.PLAIN, 20));
         Sonntag.setOpaque(true);
-        Sonntag.setBounds(1050, 200, 150, 40);
+        Sonntag.setBounds(1010, 200, 150, 40);
         Sonntag.setVerticalAlignment(JLabel.CENTER);
         Sonntag.setBackground(Color.GRAY);
 
@@ -185,43 +185,43 @@ public class Kalenderansicht implements ActionListener {
         // Tag)
         // Montag Zelle
         montagZelle = new JLabel();
-        montagZelle.setBounds(150, 240, 150, 455);
+        montagZelle.setBounds(110, 240, 150, 350);
         montagZelle.setVerticalAlignment(JLabel.TOP);
         montagZelle.setOpaque(true);
 
         // Dienstag Zelle
         dienstagZelle = new JLabel();
-        dienstagZelle.setBounds(300, 240, 150, 455);
+        dienstagZelle.setBounds(260, 240, 150, 350);
         dienstagZelle.setVerticalAlignment(JLabel.TOP);
         dienstagZelle.setOpaque(true);
 
         // Mittwoch Zelle
         mittwochZelle = new JLabel();
-        mittwochZelle.setBounds(450, 240, 150, 455);
+        mittwochZelle.setBounds(410, 240, 150, 350);
         mittwochZelle.setVerticalAlignment(JLabel.TOP);
         mittwochZelle.setOpaque(true);
 
         // Donnerstag Zelle
         donnerstagZelle = new JLabel();
-        donnerstagZelle.setBounds(600, 240, 150, 455);
+        donnerstagZelle.setBounds(560, 240, 150, 350);
         donnerstagZelle.setVerticalAlignment(JLabel.TOP);
         donnerstagZelle.setOpaque(true);
 
         // Freitag Zelle
         freitagZelle = new JLabel();
-        freitagZelle.setBounds(750, 240, 150, 455);
+        freitagZelle.setBounds(710, 240, 150, 350);
         freitagZelle.setVerticalAlignment(JLabel.TOP);
         freitagZelle.setOpaque(true);
 
         // Samstag Zelle
         samstagZelle = new JLabel();
-        samstagZelle.setBounds(900, 240, 150, 455);
+        samstagZelle.setBounds(860, 240, 150, 350);
         samstagZelle.setVerticalAlignment(JLabel.TOP);
         samstagZelle.setOpaque(true);
 
         // Sonntag Zelle
         sonntagZelle = new JLabel();
-        sonntagZelle.setBounds(1050, 240, 150, 455);
+        sonntagZelle.setBounds(1010, 240, 150, 350);
         sonntagZelle.setVerticalAlignment(JLabel.TOP);
         sonntagZelle.setOpaque(true);
 
@@ -242,7 +242,7 @@ public class Kalenderansicht implements ActionListener {
         KWminus.setBounds(10, 200, 150, 300);
         KWminus.setVisible(true);
         KWminus.addActionListener(this);
-        KWminus.setText("<");
+        //KWminus.setText("<");
         KWminus.setFocusable(false);
         KWminus.setOpaque(false);
         //KWminus.setBackground(Color.GRAY);
@@ -254,7 +254,7 @@ public class Kalenderansicht implements ActionListener {
         KWplus.setBounds(1100, 200, 150, 300);
         KWplus.setVisible(true);
         KWplus.addActionListener(this);
-        KWplus.setText(">");
+        //KWplus.setText(">");
         KWplus.setFocusable(false);
         KWplus.setOpaque(false);
         KWplus.setContentAreaFilled(false);
@@ -270,7 +270,10 @@ public class Kalenderansicht implements ActionListener {
         terminHinzufuegen.setFocusable(false);
         terminHinzufuegen.setBackground(Color.GRAY);
         terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN, 25));
-
+        terminHinzufuegen.setOpaque(false);
+        terminHinzufuegen.setContentAreaFilled(false);
+        terminHinzufuegen.setBorderPainted(false);
+        
         // Kalenderansicht (JFrame) initialisieren
         Kalenderansicht = new JFrame();
         Kalenderansicht.setSize(1280, 720);
@@ -286,6 +289,7 @@ public class Kalenderansicht implements ActionListener {
         Kalenderansicht.setLayout(null);
 
         // Inhalte Kalenderansicht werden hinzufügen
+        Kalenderansicht.add(hintergrund, 0);
         Kalenderansicht.add(Montag, 0);
         Kalenderansicht.add(Dienstag, 0);
         Kalenderansicht.add(Mittwoch, 0);
@@ -305,7 +309,7 @@ public class Kalenderansicht implements ActionListener {
         Kalenderansicht.add(KWAnzeige, 0);
         Kalenderansicht.add(KWminus, 0);
         Kalenderansicht.add(KWplus, 0);
-        Kalenderansicht.add(hintergrund, 0);
+
 
 
         Kalenderansicht.add(terminHinzufuegen);
