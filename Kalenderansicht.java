@@ -85,7 +85,6 @@ public class Kalenderansicht implements ActionListener {
 
     public void KalenderansichtStarten() {
 
-
         hintergrund = new JLabel("");
 		hintergrund.setBounds(0,-30,1280,720); //1280,720
 		iconHintergrund = new ImageIcon("Images/Kalender.png");
@@ -93,10 +92,11 @@ public class Kalenderansicht implements ActionListener {
 		imageScaleHintergrund = imgHintergrund.getScaledInstance(iconHintergrund.getIconWidth()- 335, iconHintergrund.getIconHeight()- 200, Image.SCALE_SMOOTH);
 		scaleIconHintergrund = new ImageIcon(imageScaleHintergrund);
 		hintergrund.setIcon(scaleIconHintergrund);
-
-		//340 250
-        
-        // GUI Tagesüberschriften erstellen
+    	
+    	
+    	
+    	// GUI Tagesüberschriften erstellen
+    	
         // Montag Überschrift
         JLabel Montag = new JLabel();
         Montag.setText("Montag");
@@ -240,22 +240,21 @@ public class Kalenderansicht implements ActionListener {
         // KWminusButton erstellen
         KWminus = new JButton();
         KWminus.setBounds(10, 200, 150, 300);
-        //KWminus.setVisible(true);
+        KWminus.setVisible(true);
         KWminus.addActionListener(this);
-        //KWminus.setText("<");
+        KWminus.setText("<");
         KWminus.setFocusable(false);
         KWminus.setOpaque(false);
+        //KWminus.setBackground(Color.GRAY);
         KWminus.setContentAreaFilled(false);
         KWminus.setBorderPainted(false);
-        //KWminus.setBackground(Color.GRAY);
 
         // KWplusButton erstellen
         KWplus = new JButton();
         KWplus.setBounds(1100, 200, 150, 300);
-        //KWplus.setVisible(true);
+        KWplus.setVisible(true);
         KWplus.addActionListener(this);
-        //KWplus.setText(">");
-        KWplus.setFocusable(false);
+        KWplus.setText(">");
         KWplus.setFocusable(false);
         KWplus.setOpaque(false);
         KWplus.setContentAreaFilled(false);
@@ -264,17 +263,13 @@ public class Kalenderansicht implements ActionListener {
 
         // terminHinzufügen erstellen
         terminHinzufuegen = new JButton();
-        terminHinzufuegen.setBounds(500, 110, 250, 50);
-        //terminHinzufuegen.setVisible(true);
+        terminHinzufuegen.setBounds(500, 60, 250, 50);
+        terminHinzufuegen.setVisible(true);
         terminHinzufuegen.addActionListener(this);
-        //terminHinzufuegen.setText("Termin hinzufügen");
+        terminHinzufuegen.setText("Termin hinzufügen");
         terminHinzufuegen.setFocusable(false);
-        //terminHinzufuegen.setBackground(Color.GRAY);
-        terminHinzufuegen.setFocusable(false);
-        terminHinzufuegen.setOpaque(false);
-        terminHinzufuegen.setContentAreaFilled(false);
-        terminHinzufuegen.setBorderPainted(false);
-        //terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN, 25));
+        terminHinzufuegen.setBackground(Color.GRAY);
+        terminHinzufuegen.setFont(new Font("Verdana", Font.PLAIN, 25));
 
         // Kalenderansicht (JFrame) initialisieren
         Kalenderansicht = new JFrame();
@@ -284,11 +279,11 @@ public class Kalenderansicht implements ActionListener {
         Kalenderansicht.setResizable(false);
         Kalenderansicht.setTitle("Kalenderansicht");
 
-        //ImageIcon logo = new ImageIcon("logo.png");
-        //Kalenderansicht.setIconImage(logo.getImage());
+        ImageIcon logo = new ImageIcon("logo.png");
+        Kalenderansicht.setIconImage(logo.getImage());
         // Kalenderansicht.getContentPane().setBackground(Color.white);
-        //Kalenderansicht.getContentPane().setBackground(new Color(255, 255, 255));
-        //Kalenderansicht.setLayout(null);
+        Kalenderansicht.getContentPane().setBackground(new Color(255, 255, 255));
+        Kalenderansicht.setLayout(null);
 
         // Inhalte Kalenderansicht werden hinzufügen
         Kalenderansicht.add(Montag, 0);
@@ -332,6 +327,7 @@ public class Kalenderansicht implements ActionListener {
 
     public void terminzelleGeben(Date d) { // Ergänzungsfunktion zu KalenderAnsichtInitialisieren2023(int KW)
         LinkedList<Termin> termine = new LinkedList<Termin>();
+        System.out.println("terminzelleGeben: kalender.wieVieleTermine():" + kalender.wieVieleTermine());
         System.out.println("terminzelleGeben vor gibtTermine" + d.toString());
         termine = kalender.gibTermine(d);
         System.out.println("terminzelleGeben nach" + termine);
@@ -598,6 +594,8 @@ public class Kalenderansicht implements ActionListener {
 
             kalender.addTerminB(ds.getDate(), de.getDate(), anlass.getText(), ort.getText());
             System.out.println("nach addTerminB: " + ds.getDate() + de.getDate() + anlass.getText() + ort.getText());
+
+            System.out.println("kalender.wieVieleTermine():" + kalender.wieVieleTermine());
 
             terminHinzufuegenAnsicht.dispose();
         }
